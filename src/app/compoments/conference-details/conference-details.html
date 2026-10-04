@@ -1,0 +1,12 @@
+<section id="conference">
+  <h2>{{ title }}</h2>
+  @if (conference(); as selected) {
+    <h3>{{ selected.title }}</h3>
+    <p>{{ selected.description }}</p>
+    <p>Date : {{ selected.date | date:'dd/MM/yyyy' }}</p>
+    <p>Lieu : {{ selected.place }}</p>
+    <p>Participants : {{ selected.nbParticipants }} / {{ selected.maxParticipants }}</p>
+  } @else {
+    <p>Sélectionnez une conférence pour voir ses détails.</p>
+  }
+</section>

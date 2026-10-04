@@ -1,0 +1,145 @@
+:host {
+  display: block;
+  min-width: 0;
+}
+
+.list-card {
+  background: white;
+  border-left: 5px solid #0f766e;
+  border-radius: 14px;
+  padding: 24px;
+  box-shadow: 0 5px 18px rgb(0 0 0 / 8%);
+  color: #334155;
+  line-height: 1.5;
+  overflow-wrap: anywhere;
+}
+
+.section-title {
+  display: flex;
+  align-items: center;
+  gap: 18px;
+  margin-bottom: 20px;
+}
+
+.icon {
+  width: 58px;
+  height: 58px;
+  flex: 0 0 58px;
+  display: grid;
+  place-items: center;
+  border-radius: 50%;
+  background: #e6fffb;
+  font-size: 28px;
+}
+
+h2 {
+  margin: 0 0 5px;
+  color: #173b67;
+}
+
+.section-title p {
+  margin: 0;
+  color: #64748b;
+}
+
+.conference-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 240px), 1fr));
+  gap: 15px;
+  margin-bottom: 22px;
+}
+
+.conference-item {
+  display: flex;
+  flex-direction: column;
+  min-width: 0;
+  border: 1px solid #dbe4ee;
+  border-radius: 12px;
+  padding: 18px;
+  background: #f8fafc;
+  cursor: pointer;
+  transition: transform 0.2s, border-color 0.2s, box-shadow 0.2s;
+}
+
+.conference-item:hover {
+  transform: translateY(-2px);
+  border-color: #7aa7d8;
+  box-shadow: 0 5px 14px rgb(0 0 0 / 7%);
+}
+
+.conference-item h3 {
+  margin: 0 0 12px;
+  color: #173b67;
+}
+
+.conference-item p {
+  margin: 0 0 12px;
+}
+
+.inscription-btn {
+  margin-top: auto;
+  background: #16803c;
+  border: 0;
+  color: white;
+  padding: 10px 16px;
+  border-radius: 8px;
+  font-family: inherit;
+  font-size: 1rem;
+  font-weight: bold;
+  min-height: 44px;
+  cursor: pointer;
+  transition: background-color 0.2s;
+}
+
+.inscription-btn:hover:not(:disabled) {
+  background: #116530;
+}
+
+.inscription-btn:focus-visible {
+  outline: 3px solid #173b67;
+  outline-offset: 3px;
+}
+
+.inscription-btn:disabled {
+  background: #64748b;
+  cursor: not-allowed;
+}
+
+app-conference-details {
+  display: block;
+  border-top: 1px solid #dbe4ee;
+  padding-top: 18px;
+}
+
+@media (max-width: 480px) {
+  .list-card {
+    padding: 16px;
+  }
+
+  .section-title {
+    align-items: flex-start;
+    gap: 12px;
+  }
+
+  .icon {
+    width: 44px;
+    height: 44px;
+    flex-basis: 44px;
+    font-size: 24px;
+  }
+
+  h2 {
+    font-size: 1.25rem;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .conference-item,
+  .inscription-btn {
+    transition: none;
+  }
+
+  .conference-item:hover {
+    transform: none;
+  }
+}
